@@ -4,10 +4,6 @@ import junit.framework.TestCase;
 
 public class Customer extends TestCase {
 
-	public final void testHashCode() {
-		fail("Not yet implemented"); // TODO
-	}
-
 	public final void testCustomer() {
 		fail("Not yet implemented"); // TODO
 	}

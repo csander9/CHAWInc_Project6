@@ -4,10 +4,6 @@ import junit.framework.TestCase;
 
 public class Account extends TestCase {
 
-	public final void testHashCode() {
-		fail("Not yet implemented"); // TODO
-	}
-
 	public final void testAccount() {
 		fail("Not yet implemented"); // TODO
 	}
@@ -61,10 +57,6 @@ public class Account extends TestCase {
 	}
 
 	public final void testCompareTo() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	public final void testToString() {
 		fail("Not yet implemented"); // TODO
 	}
 
