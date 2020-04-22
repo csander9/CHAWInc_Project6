@@ -2,7 +2,7 @@ package com.banking;
 
 import junit.framework.TestCase;
 
-public class SavingAccount extends TestCase {
+public class TestSavingAccount extends TestCase {
 
 	public final void testDeposit() {
 		fail("Not yet implemented"); // TODO
