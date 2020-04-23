@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Bank {
     private final String NAME;
     private final Map<String, Customer> customers = new HashMap<>();
-    private double insufficientFundsPenalty = 10.00;  // Default, in dollars
+    static double insufficientFundsPenalty = 10.00;  // Default, in dollars
 
     /** Creates a new Bank object with the given name.
      *
@@ -37,7 +37,7 @@ public class Bank {
     /**
      * @param insufficientFundsPenalty the insufficientFundsPenalty to set
      */
-    public void setInsufficientFundsPenalty (double insufficientFundsPenalty) {
+    public static void setInsufficientFundsPenalty (double insufficientFundsPenalty) {
         // Stub
     }
 
@@ -76,7 +76,7 @@ public class Bank {
      * @param firstName Customer's first (or given) name
      * @return the customer's ID
      */
-    public String addCustomer (String lastName, String firstName) {
+    public static String addCustomer (String lastName, String firstName) {
         return null;  // Stub
     }
 
@@ -84,7 +84,7 @@ public class Bank {
      * (In reality, just marks the customer as non-current.)
      * @param customerId the ID of the customer to remove
      */
-    public void removeCustomer (String customerId) {
+    public static void removeCustomer (String customerId) {
         // Stub
     }
 
@@ -100,7 +100,7 @@ public class Bank {
      * @param customerId The ID of the customer
      * @return That customer's Account, or null
      */
-    public Customer getCustomer (String customerId) {
+    public static Customer getCustomer (String customerId) {
         return null;  // Stub
     }
 
