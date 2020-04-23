@@ -1,7 +1,10 @@
 package com.banking;
 
-import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class CustomerTests {
 
@@ -15,7 +18,7 @@ class CustomerTests {
     void setUp () {
         bank = new Bank( "CHAWInc Saving and Loan" );
         custID = bank.addCustomer("Sanders", "Charles");
-        Customer customer = bank.getCustomer( custID );
+        Customer customer = bank.getCustomer(custID);
         Account savings = customer.addSavingsAccount( 0.00, "Test Account" );
     }
 
@@ -23,69 +26,87 @@ class CustomerTests {
     @Test
     @DisplayName("customer.getBank Test")
     void testGetBank() {
-        assertEquals( "Bank name is:", customer.getBank() );
+
+    	String bankExp = "CHAWInc Saving and Loan";
+        assertEquals( bankExp, bank, "Expected Bank name is:" + bankExp + "But Program gives:" + bank );
 	}
 
     //Test get customer ID
     @Test
     @DisplayName("customer.getCustomerId Test")
     void testGetCustomerId() {
-        assertEquals( "Customer ID is:", customer.getCustomerId() ); 
+        String custIDExp = "Charles Sanders";
+    	assertEquals( custIDExp, custID, "Expected Customer ID is:" + custIDExp + "But Program Gives:" custID); 
 	}
 
     //Test get last name
     @Test
     @DisplayName("customer.getLastName Test")
     void testGetLastName() {
-        assertEquals( "Customer Last Name is:", customer.getLastName() );
+        String lastNameExp = "Sanders";
+        String lastName = customer.getLastName();
+    	assertEquals( lastNameExp, lastName, "Expected Last Name is:" lastNameExp + "But Program Gives:" + lastName );
 	}
 
 	//Test get first name
     @Test
     @DisplayName("customer.getFirstName Test")
     void testGetFirstName() {
-        assertEquals( "Customer First Name is:", customer.getFirstName() );
+        String firstNameExp = "Charles";
+        String firstName = customer.getFirstName();
+    	assertEquals( "Customer First Name is:", "Expected Last Name is:" + firstNameExp + "But Program Gives:" + firstName  );
 
     //Test Get accounts
     @Test
     @DisplayName("customer.getCustomerAccounts Test")
     void testGetCustomerAccounts() {
-        assertEquals( "Customer Accounts:", customer.getCustomerAccounts() );
+        String savingsExp = "Test Account";
+    	assertEquals( savingsExp, savings, "Expected Account:" + savingsExp + "But Program Gives:" + savings );
 	}
 
     //Test Get YTD Fees
     @Test
     @DisplayName("customer.ytdFees Test")
     void testYtdFees() {
-        assertEquals( "Customer YTD fees:", customer.ytdFees() ); 
+        
+    	System.out.println("YTD Fees: " + customer.ytdFees() );
 	}
 
     //Test Get YTD Fees
     @Test
     @DisplayName("customer.ytdInterest Test")
     void testYtdInterest() {
-        assertEquals( "Customer YTD fees:", customer.ytdFees() );
+    	
+    	System.out.println("YTD Interest: " + customer.ytdInterest() );
     }
 
     //Test add savings account
     @Test
     @DisplayName("customer.addSavingsAccount")
     void testAddSavingsAccount() {
-        assertEquals( "Add Savings Account:", customer.addSavingsAccount(0, "savings2") ); 
-	}
-
-    //Test remove account
-    @Test
-    @DisplayName("customer.removeAccount")
-	public final void testRemoveAccount() {
-        assertEquals( "Remove Account:", customer.removeAccount("savings2") ); 
+        
+    	System.out.println("Added Savings Account: " + savings + " Should be called Test Account" );
 	}
 
     //Test get account
     @Test
     @DisplayName("customer.getAccount")  
     void testGetAccount() {
-        assertEquals( "Account:", customer.getAccount("Test Account") ); 
+        
+    	Account account = customer.getAccount("Test Account");
+    	String accountExp = "Test Account";
+    	assertEqual(accountExp, account, "Expected account is" + accountExp, " Program retrieved: " + account ); 
 	}
+    
+    //Test remove account
+    @Test
+    @DisplayName("customer.removeAccount")
+	public final void testRemoveAccount() {
+        
+        customer.removeAccount("Test Account");
+        Account accountTest = customer.getAccount("Test Account");
+        System.out.println( "customer account should be blank: " + accountTest );
+	}
+
 
 }
