@@ -1,5 +1,7 @@
 package banking;
 
+import jdk.jfr.StackTrace;
+
 import java.time.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -134,4 +136,94 @@ public abstract class Account implements Comparable<Account> {
     public String toString () {
         return null;  // Stub
     }
+}
+
+    //Test getBalance
+    @Test
+    @Accountbalance("customer.getBalance")
+            void testGetBalance(){
+
+    }
+
+
+    Customer C;
+
+    double AccountBalance;
+
+    // provide constructors, getters and setters.
+
+    public BankAccount(String firstName, String lastName)
+
+    {
+
+        AccountBalance = 0.0;
+
+        C = new Customer(firstName, lastName);
+
+    }
+
+    public BankAccount(Customer c)
+
+    {
+
+        AccountBalance = 0.0;
+
+        C = new Customer(c.firstname, c.lastname);
+
+    }
+
+    // Makes a deposit to the account
+
+    public void deposit(double amount)
+
+    {
+
+        AccountBalance += amount;
+
+    }
+
+    // Makes a withdraw from the account
+
+    public void withdraw(double amount)
+
+    {
+
+        AccountBalance -= amount;
+
+    }
+
+    // Returns the customer name.
+
+    public String getCustomer()
+
+    {
+
+        return C.toString();
+
+    }
+
+    // Returns the balance of the account
+
+    public double getBalance()
+
+    {
+
+        return AccountBalance;
+
+    }
+
+    // A string representation of the Bank account
+
+    public String toString()
+
+    {
+
+        String res;
+
+        res = "Customer Name: " + C.toString() + "Account Balance: " + this.AccountBalance;
+
+        return res;
+
+    }
+
 }
