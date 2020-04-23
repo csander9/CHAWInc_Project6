@@ -1,4 +1,4 @@
-package banking;
+package com.banking;
 
 import java.time.*;
 import java.util.*;
@@ -18,7 +18,7 @@ public abstract class Account implements Comparable<Account> {
     // protected StatementCycle statementCycle; // An enum representing any
     //                                          // possible statement cycle
     protected double balance;
-    protected List<Transaction> transactions = new ArrayList<>();
+    protected List<Transaction> transactions = new ArrayList<Transaction>();
 
     /**
      * @param cust Customer owning this account
