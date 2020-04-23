@@ -1,4 +1,4 @@
-package banking;
+package com.banking;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  */
 public class Bank {
     private final String NAME;
-    private final Map<String, Customer> customers = new HashMap<>();
+    private final Map<String, Customer> customers = new HashMap<String, Customer>();
     private double insufficientFundsPenalty = 10.00;  // Default, in dollars
 
     /** Creates a new Bank object with the given name.
