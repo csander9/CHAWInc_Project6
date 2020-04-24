@@ -9,9 +9,9 @@ import org.junit.jupiter.api.Test;
  */
 class BankTest {
 
-	private Bank bank;
-	private final String NAME;
-	private Customer customer;
+    private Bank bank;
+    private final String NAME;
+    private Customer customer;
     private String customerID;
     private Account account;
  	   
@@ -58,7 +58,7 @@ class BankTest {
 	{
 		bank.setInsufficientFundsPenalty (-5);
 		// An exception must be thrown, otherwise test failed.	
-		assertFalse ( bank.getInsufficientFundsPenalty() < 0, "Result is a negative value, must be above 0, ");
+		assertFalse ( bank.getInsufficientFundsPenalty() > 0, "Result is a negative value, must be above 0, ");
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ class BankTest {
 		bank.addCustomer ( "Truong" , "Hung" );
 		
 		//null test condition
-		assertFalse ( bank.getCustomer("") == null, "Result is a null string with no input " );
+		assertFalse ( bank.getCustomer("") != null, "Result is a null string with no input " );
 		
 	}
 	
@@ -86,7 +86,7 @@ class BankTest {
 		// Tests if String or null value	
 		bank.removeCustomer("30044");
 
-		assertFalse ( customerID == null,  "Result is a null string with no input " );
+		assertFalse ( customerID != null,  "Result is a null string with no input " );
 	}
 	@Test
 	void test_removeCustomer_IntegerInput() 
@@ -104,7 +104,7 @@ class BankTest {
 		bank.getCustomer("30045");
 		
 		//customerID null test condition
-		assertFalse ( customerID == null, "Result is a null string with no input ");
+		assertFalse ( customerID != null, "Result is a null string with no input ");
 	}
 
 	@Test
@@ -125,7 +125,7 @@ class BankTest {
 		
 		
 		//customerID null test condition
-		assertFalse ( customerID == null, "Result is a null string with no input " + customerID );
+		assertFalse ( customerID != null, "Result is a null string with no input " + customerID );
 		
 	}
 	
