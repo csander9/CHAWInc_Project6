@@ -38,7 +38,7 @@ class BankTest {
 		int characterNumber = 2;
 		
 		// Can't have a null string value
-		assertFalse( bank.getNAME() == null,"Result is a null string with no input " + bank.getNAME() );
+		assertFalse( bank.getNAME() != null,"Result is a null string with no input " + bank.getNAME() );
 		
 		// Bank names should have at least 2 characters
 		assertFalse( (bank.getNAME().length()) >= characterNumber,"Result length have at least " + characterNumber + " but received "
@@ -67,7 +67,7 @@ class BankTest {
 		bank.addCustomer ( "Truong" , "Hung" );
 		
 		//null test condition
-		assertFalse ( bank.getCustomer("") != null, "Result is a null string with no input " );
+		assertFalse ( bank.getCustomer(customerID) == null, "Result is a null string with no input " );
 		
 	}
 	
@@ -111,7 +111,7 @@ class BankTest {
 	void test_getCustomer_IntegerInput () 
 	{	
 		assertThrows(IllegalArgumentException.class, () -> {
-			bank.getCustomer(30444);
+			bank.getCustomer(customerID);
 			// 	An exception must be thrown, otherwise test failed.
 			// short and byte not tested because of similar outcome
 		});
@@ -121,7 +121,7 @@ class BankTest {
 	void test_getCustomersAccounts_NormalInput ()
 	{
 		
-		bank.getCustomersAccounts("30045");
+		bank.getCustomersAccounts(customerID);
 		
 		
 		//customerID null test condition
