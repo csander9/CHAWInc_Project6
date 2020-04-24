@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class Bank {
     private final String NAME;
     private final Map<String, Customer> customers = new HashMap<String, Customer>();
-    static double insufficientFundsPenalty = 10.00;  // Default, in dollars
+    private double insufficientFundsPenalty = 10.00;  // Default, in dollars
 
     /** Creates a new Bank object with the given name.
      *
