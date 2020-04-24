@@ -41,7 +41,7 @@ class BankTest {
 		assertFalse( bank.getNAME() == null,"Result is a null string with no input " + bank.getNAME() );
 		
 		// Bank names should have at least 2 characters
-		assertFalse( (bank.getNAME().length()) >= characterNumber,"Result length have at least " + characterNumber + " but received "
+		assertFalse( (bank.getNAME().length()) < characterNumber,"Result length have at least " + characterNumber + " but received "
 				+ bank.getNAME().length() );
 	}
 	// Must set a penalty fee over 0
@@ -50,7 +50,7 @@ class BankTest {
 		bank.setInsufficientFundsPenalty (0);
 		 
 		 // Fee must be over 0
-		 assertFalse ( bank.getInsufficientFundsPenalty() > 0, "Result is a 0 value, must not be 0, and above 0"); 
+		 assertFalse ( bank.getInsufficientFundsPenalty() == 0, "Result is a 0 value, must not be 0, and above 0"); 
 	}
 	
 	@Test
@@ -58,7 +58,7 @@ class BankTest {
 	{
 		bank.setInsufficientFundsPenalty (-5);
 		// An exception must be thrown, otherwise test failed.	
-		assertFalse ( bank.getInsufficientFundsPenalty() > 0, "Result is a negative value, must be above 0, ");
+		assertFalse ( bank.getInsufficientFundsPenalty() < 0, "Result is a negative value, must be above 0, ");
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ class BankTest {
 		bank.addCustomer ( "Truong" , "Hung" );
 		
 		//null test condition
-		assertFalse ( bank.getCustomer("") != null, "Result is a null string with no input " );
+		assertFalse ( bank.getCustomer(customerID) == null, "Result is a null string with no input " );
 		
 	}
 	
@@ -86,7 +86,7 @@ class BankTest {
 		// Tests if String or null value	
 		bank.removeCustomer("30044");
 
-		assertFalse ( customerID != null,  "Result is a null string with no input " );
+		assertFalse ( customerID == null,  "Result is a null string with no input " );
 	}
 	@Test
 	void test_removeCustomer_IntegerInput() 
@@ -104,14 +104,14 @@ class BankTest {
 		bank.getCustomer("30045");
 		
 		//customerID null test condition
-		assertFalse ( customerID != null, "Result is a null string with no input ");
+		assertFalse ( customerID == null, "Result is a null string with no input ");
 	}
 
 	@Test
 	void test_getCustomer_IntegerInput () 
 	{	
 		assertThrows(IllegalArgumentException.class, () -> {
-			bank.getCustomer(30444);
+			bank.getCustomer(53434);
 			// 	An exception must be thrown, otherwise test failed.
 			// short and byte not tested because of similar outcome
 		});
@@ -121,11 +121,11 @@ class BankTest {
 	void test_getCustomersAccounts_NormalInput ()
 	{
 		
-		bank.getCustomersAccounts("30045");
+		bank.getCustomersAccounts(customerID);
 		
 		
 		//customerID null test condition
-		assertFalse ( customerID != null, "Result is a null string with no input " + customerID );
+		assertFalse ( customerID == null, "Result is a null string with no input " );
 		
 	}
 	
