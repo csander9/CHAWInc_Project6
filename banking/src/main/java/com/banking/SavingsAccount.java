@@ -33,7 +33,7 @@ public class SavingsAccount extends Account {
     }
 
     @Override
-    public void deposit (double amount) {
+    public  void deposit (double amount) {
         // Stub
     }
 
