@@ -138,10 +138,5 @@ class BankTest {
 		// An exception must be thrown, otherwise test failed.
 		// short and byte not tested because of similar outcome
 	}
-	
-	@Test
-	final void test() {
-		fail("Not yet implemented");
-	}
 
 }
