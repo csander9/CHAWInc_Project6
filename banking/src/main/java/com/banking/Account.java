@@ -28,7 +28,7 @@ public abstract class Account implements Comparable<Account> {
      * @param accountDescription A description
      */
     public Account (Customer cust, double initialBalance,
-            String accountDescription) {
+                    String accountDescription) {
         this.customer = cust;
         this.creationDate = LocalDateTime.now();
         this.accountId = "";
@@ -55,7 +55,7 @@ public abstract class Account implements Comparable<Account> {
      * @param amount The amount to transfer
      */
     public static void transfer (Account fromAccount, Account toAccount,
-            double amount) {
+                                 double amount) {
         // Stub
     }
 
@@ -142,7 +142,6 @@ public abstract class Account implements Comparable<Account> {
     @Test
     @Accountbalance("customer.getBalance")
             void testGetBalance(){
-    
     }
 
 
