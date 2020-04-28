@@ -1,4 +1,4 @@
-package banking;
+package com.banking;
 
 import jdk.jfr.StackTrace;
 
@@ -20,7 +20,7 @@ public abstract class Account implements Comparable<Account> {
     // protected StatementCycle statementCycle; // An enum representing any
     //                                          // possible statement cycle
     protected double balance;
-    protected List<Transaction> transactions = new ArrayList<>();
+    protected List<Transaction> transactions = new ArrayList<Transaction>();
 
     /**
      * @param cust Customer owning this account
@@ -28,7 +28,7 @@ public abstract class Account implements Comparable<Account> {
      * @param accountDescription A description
      */
     public Account (Customer cust, double initialBalance,
-            String accountDescription) {
+                    String accountDescription) {
         this.customer = cust;
         this.creationDate = LocalDateTime.now();
         this.accountId = "";
@@ -55,7 +55,7 @@ public abstract class Account implements Comparable<Account> {
      * @param amount The amount to transfer
      */
     public static void transfer (Account fromAccount, Account toAccount,
-            double amount) {
+                                 double amount) {
         // Stub
     }
 
@@ -141,7 +141,7 @@ public abstract class Account implements Comparable<Account> {
     //Test getBalance
     @Test
     @Accountbalance("customer.getBalance")
-            void testGetBalance(){
+    void testGetBalance(){
 
     }
 
@@ -153,12 +153,6 @@ public abstract class Account implements Comparable<Account> {
     // provide constructors, getters and setters.
 
     public BankAccount(String firstName, String lastName)
-
-
-    @override
-    public int compareTo (Accountbalance)
-            return null;
-
 
     {
 
