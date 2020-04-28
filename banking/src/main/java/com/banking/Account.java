@@ -141,8 +141,7 @@ public abstract class Account implements Comparable<Account> {
     //Test getBalance
     @Test
     @Accountbalance("customer.getBalance")
-    void testGetBalance(){
-
+            void testGetBalance(){
     }
 
 

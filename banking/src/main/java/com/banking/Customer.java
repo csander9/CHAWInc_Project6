@@ -1,4 +1,4 @@
-package banking;
+package com.banking;
 
 import java.util.*;
 
@@ -13,7 +13,7 @@ public class Customer implements Comparable<Customer> {
     private final String customerId;
     private final String lastName;
     private final String firstName;
-    private final SortedSet<Account> customerAccounts = new TreeSet<>();
+    private final SortedSet<Account> customerAccounts = new TreeSet<Account>();
 
     /** Creates a new Customer object from a name.
      * Note for this project, we assume bank names are unique.
@@ -130,3 +130,4 @@ public class Customer implements Comparable<Customer> {
         return 1;  // Stub
     }
 }
+
